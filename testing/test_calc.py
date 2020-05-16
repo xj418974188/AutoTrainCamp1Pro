@@ -29,7 +29,7 @@ class TestCalc:
     def teardown(self):
         print("teardown")
 
-    @pytest.mark.parametrize('a, b, expect', yaml.safe_load(open("data.yml")))
+    @pytest.mark.parametrize('a, b, expect', yaml.safe_load(open("datas/data.yml")))
     # @pytest.mark.run(order=-1)
     def test_zadd_1(self, a, b, expect):
         result = self.calc.add(a, b)
@@ -37,7 +37,7 @@ class TestCalc:
         assert result == expect
 
     def get_steps(self):
-        with open('steps.yml') as f:
+        with open('steps/steps.yml') as f:
             return yaml.safe_load(f)
 
     def any_steps(self, data, expect):
@@ -49,7 +49,7 @@ class TestCalc:
             elif 'add1' == step:
                 assert self.calc.add1(data) == expect
 
-    @pytest.mark.parametrize('a, b, expect', yaml.safe_load(open("data.yml")))
+    @pytest.mark.parametrize('a, b, expect', yaml.safe_load(open("datas/data.yml")))
     # @pytest.mark.run(order=-1)
     def test_zadd_2(self, a, b, expect):
         data = (a, b)
