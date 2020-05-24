@@ -14,10 +14,6 @@ class Contact(BasePage):
         self.waitfor_click(ele)
         self.find(By.CSS_SELECTOR, ".ww_checkbox").click()
 
-
-
-
-
     def get_member(self):
         """
         得到所有的成员信息
@@ -28,8 +24,8 @@ class Contact(BasePage):
         while True:
             # 获取翻页,meassage获取到的是一个 1/3, 2/3, 3/3/3
             time.sleep(1)
-            meassage:str = self.find(By.CSS_SELECTOR, ".ww_pageNav_info_text").text
-            #得到当前页和总页数，切割后是["1","3"]所以需要强转
+            meassage: str = self.find(By.CSS_SELECTOR, ".ww_pageNav_info_text").text
+            # 得到当前页和总页数，切割后是["1","3"]所以需要强转
             print(meassage)
             cur_page, total_page = [int(i) for i in meassage.split("/", 1)]
 

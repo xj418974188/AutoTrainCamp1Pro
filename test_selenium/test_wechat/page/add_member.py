@@ -11,13 +11,13 @@ class AddMember(BasePage):
 
     def add_member(self):
         time.sleep(3)
-        #姓名
+        # 姓名
         self.find(By.ID, self._ele_username).send_keys("庄周u")
-        #账号
+        # 账号
         self.find(By.ID, "memberAdd_acctid").send_keys("9882212")
-        #手机号
+        # 手机号
         self.find(By.ID, "memberAdd_phone").send_keys("19211122213")
-        #点击保存
+        # 点击保存
         self.find(By.CSS_SELECTOR, ".js_btn_save").click()
         return Contact(self.driver)
 
@@ -31,4 +31,3 @@ class AddMember(BasePage):
         # 点击保存
         self.find(By.CSS_SELECTOR, ".js_btn_save").click()
         return Contact(self.driver)
-

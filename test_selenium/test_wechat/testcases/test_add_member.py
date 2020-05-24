@@ -10,6 +10,3 @@ class TestAddMember:
     def test_add_member_fail(self):
         main = Main()
         assert "阿英" not in main.goto_add_member().add_member_fail().get_member()
-
-
-
